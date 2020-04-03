@@ -5,12 +5,12 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-public abstract class BasePage {
+public class ItemPage extends BasePage {
 
-    public BasePage() {
+    public ItemPage() {
         PageFactory.initElements(Driver.get(), this);
     }
 
-    @FindBy(xpath = "//input[@data-id='search-query']")
-    public WebElement searchInputBox;
+    @FindBy(xpath = "//div[@id='listing-page-cart']/div/div/p/a/span")
+    public WebElement sellerName;
 }
