@@ -26,18 +26,18 @@ public class FindItemStepDefs {
 
     @When("the user searches for {string}")
     public void the_user_searches_for(String searchKeyword) {
-        searchKeyword=ConfigurationReader.get("keyword");
         BrowserUtils.waitForPageToLoad(10);
         HomePage homePage=new HomePage();
         homePage.privacyAcceptButton.click();
-        //BrowserUtils.waitFor(2);
+        BrowserUtils.waitFor(2);
         homePage.searchInputBox.sendKeys(searchKeyword, Keys.ENTER);
     }
 
     @When("the user chooses deliver to {string}")
     public void the_user_chooses_deliver_to(String country) {
-        BrowserUtils.waitForPageToLoad(15);
+        BrowserUtils.waitForPageToLoad(20);
         ItemListPage obj1=new ItemListPage();
+        BrowserUtils.waitFor(3);
         obj1.deliverToSelect.selectByVisibleText(country);
         //BrowserUtils.waitFor(3);
     }
